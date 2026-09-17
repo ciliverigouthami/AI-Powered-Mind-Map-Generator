@@ -1,0 +1,978 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f6f7fb;
+  color: #171923;
+}
+
+button,
+textarea,
+input,
+select {
+  font-family: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background: #11131d;
+  color: white;
+  padding: 26px 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px 35px;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #6d5dfc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.logo h2 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.logo span {
+  font-size: 11px;
+  color: #9296a8;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  border: none;
+  background: transparent;
+  color: #aeb2c3;
+  padding: 13px 15px;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: 0.2s;
+}
+
+.nav-item:hover {
+  background: #1c1f2c;
+  color: white;
+}
+
+.nav-item.active {
+  background: #27233f;
+  color: white;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  padding: 14px 10px;
+}
+
+.ai-status {
+  font-size: 12px;
+  color: #d6d8e3;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #36d399;
+}
+
+.sidebar-bottom p {
+  color: #74798c;
+  font-size: 11px;
+  margin-top: 8px;
+}
+
+/* ================= MAIN ================= */
+
+.main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  height: 72px;
+  background: white;
+  border-bottom: 1px solid #e8e9ef;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 42px;
+}
+
+.breadcrumb {
+  font-size: 13px;
+  color: #8a8e9e;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-button {
+  border: 1px solid #e2e3e9;
+  background: white;
+  border-radius: 9px;
+  padding: 9px 15px;
+  cursor: pointer;
+  color: #55596b;
+}
+
+.profile-button {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: #e8e5ff;
+  color: #6255e7;
+  font-weight: 700;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  max-width: 920px;
+  margin: 55px auto 30px;
+  padding: 0 25px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #eeecff;
+  color: #6255e7;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.hero h1 {
+  font-size: 46px;
+  line-height: 1.12;
+  margin-top: 18px;
+  letter-spacing: -1.5px;
+}
+
+.hero h1 span {
+  color: #6658ee;
+}
+
+.hero p {
+  color: #74798a;
+  font-size: 16px;
+  margin-top: 15px;
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+/* ================= WORKSPACE CARD ================= */
+
+.workspace-card {
+  max-width: 920px;
+  margin: 0 auto;
+  background: white;
+  border: 1px solid #e6e7ed;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 12px 35px rgba(20, 20, 40, 0.05);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.card-header h2 {
+  font-size: 18px;
+}
+
+.card-header p {
+  color: #8a8e9d;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.word-count {
+  font-size: 11px;
+  color: #999dac;
+}
+
+textarea {
+  width: 100%;
+  height: 230px;
+  resize: vertical;
+  margin-top: 22px;
+  padding: 18px;
+  border: 1px solid #dedfe7;
+  border-radius: 12px;
+  outline: none;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #343746;
+  background: #fbfbfd;
+}
+
+textarea:focus {
+  border-color: #7669f5;
+  box-shadow: 0 0 0 3px rgba(118, 105, 245, 0.1);
+}
+
+textarea::placeholder {
+  color: #a6a9b5;
+}
+
+/* ================= INPUT OPTIONS ================= */
+
+.input-options {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.upload-button {
+  border: 1px solid #dedfe7;
+  background: white;
+  border-radius: 9px;
+  padding: 9px 13px;
+  font-size: 12px;
+  color: #5d6172;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition: 0.2s;
+}
+
+.upload-button:hover {
+  background: #f7f7fb;
+}
+
+.supported {
+  margin-left: auto;
+  font-size: 11px;
+  color: #a0a3af;
+}
+
+/* ================= GENERATE BUTTON ================= */
+
+.generate-button {
+  width: 100%;
+  margin-top: 22px;
+  border: none;
+  border-radius: 11px;
+  padding: 15px;
+  background: #6658ee;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: 0.2s;
+}
+
+.generate-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(102, 88, 238, 0.25);
+}
+
+.generate-button .arrow {
+  font-size: 18px;
+}
+
+/* ================= FEATURES ================= */
+
+.features {
+  max-width: 920px;
+  margin: 25px auto 50px;
+  padding: 0 25px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.feature {
+  background: white;
+  border: 1px solid #e8e9ef;
+  border-radius: 13px;
+  padding: 18px;
+  display: flex;
+  gap: 12px;
+}
+
+.feature-icon {
+  font-size: 22px;
+}
+
+.feature h3 {
+  font-size: 13px;
+}
+
+.feature p {
+  margin-top: 5px;
+  color: #8a8e9d;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* ================= MIND MAP ================= */
+
+.mindmap-section {
+  margin-top: 30px;
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.mindmap-header {
+  margin-bottom: 20px;
+}
+
+.mindmap-badge {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.mindmap-header h2 {
+  margin: 0 0 8px;
+  font-size: 26px;
+}
+
+.mindmap-header p {
+  margin: 0;
+  color: #666;
+  line-height: 1.6;
+}
+
+.mindmap-container {
+  height: 600px;
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+.mindmap-root-node {
+  border: 3px solid #6366f1 !important;
+  border-radius: 12px !important;
+  padding: 12px 18px !important;
+  font-weight: 700 !important;
+}
+
+.mindmap-concept-node {
+  border: 2px solid #d1d5db !important;
+  border-radius: 10px !important;
+  padding: 10px 16px !important;
+  font-weight: 500 !important;
+}
+
+.error-message {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* =========================================================
+   SMART LEARNING HUB
+   Existing design preserved + polished styling
+   ========================================================= */
+
+.study-tools-section {
+  max-width: 1180px;
+  margin: 36px auto 60px;
+  padding: 0 24px;
+}
+
+.study-tools-heading {
+  margin-bottom: 4px;
+}
+
+.study-tools-heading h2 {
+  margin: 12px 0 6px;
+  font-size: 30px;
+  letter-spacing: -0.5px;
+  color: #171923;
+}
+
+.study-tools-heading p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ================= TOOL NAVIGATION ================= */
+
+.study-tools-nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 22px 0;
+}
+
+.tool-tab,
+.difficulty {
+  border: 1px solid #dbe3ee;
+  background: #fff;
+  padding: 9px 13px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #334155;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.tool-tab:hover,
+.difficulty:hover {
+  border-color: #b9b2ff;
+  background: #f8f7ff;
+  color: #5b50d6;
+}
+
+.tool-tab.active,
+.difficulty.active {
+  background: #6658ee;
+  color: #fff;
+  border-color: #6658ee;
+  box-shadow: 0 5px 14px rgba(102, 88, 238, 0.18);
+}
+
+/* ================= MAIN TOOL PANELS ================= */
+
+.learning-dashboard,
+.tool-panel {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+}
+
+.tool-panel {
+  transition: box-shadow 0.2s ease;
+}
+
+.tool-panel:hover {
+  box-shadow: 0 10px 34px rgba(15, 23, 42, 0.07);
+}
+
+/* ================= PROGRESS DASHBOARD ================= */
+
+.progress-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid #eef2f7;
+}
+
+.progress-hero h3 {
+  margin: 8px 0;
+  font-size: 20px;
+}
+
+.muted-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.progress-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.progress-stat {
+  padding: 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  transition: 0.2s;
+}
+
+.progress-stat:hover {
+  border-color: #c9c4ff;
+  transform: translateY(-1px);
+}
+
+.progress-stat b {
+  display: block;
+  font-size: 25px;
+  color: #171923;
+}
+
+.progress-stat span {
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* ================= TWO COLUMN TOOLS ================= */
+
+.tool-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.tool-columns > div {
+  min-width: 0;
+}
+
+/* ================= TOPIC CHECKBOXES ================= */
+
+.topic-check {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  color: #334155;
+  font-size: 13px;
+  align-items: center;
+}
+
+.topic-check input {
+  accent-color: #6658ee;
+}
+
+.weak-topic {
+  padding: 9px 0;
+  color: #92400e;
+  font-size: 13px;
+}
+
+/* ================= TOOL NOTE ================= */
+
+.tool-note {
+  margin-top: 18px;
+  padding: 12px 14px;
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid #edf1f5;
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* ================= FORMS ================= */
+
+.tool-form {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.tool-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #475569;
+  font-size: 13px;
+}
+
+.tool-input,
+.tool-textarea,
+.tool-form input,
+.tool-panel select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  margin: 10px 0;
+  outline: none;
+  background: #fff;
+  color: #334155;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.tool-input:focus,
+.tool-textarea:focus,
+.tool-form input:focus,
+.tool-panel select:focus {
+  border-color: #7669f5;
+  box-shadow: 0 0 0 3px rgba(118, 105, 245, 0.1);
+}
+
+.tool-textarea {
+  min-height: 150px;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.tool-form input {
+  width: 120px;
+}
+
+/* ================= BUTTONS ================= */
+
+.primary-button,
+.secondary-button {
+  border: 0;
+  border-radius: 9px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.primary-button {
+  background: #6658ee;
+  color: #fff;
+  font-weight: 600;
+}
+
+.primary-button:hover {
+  background: #594bdc;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 18px rgba(102, 88, 238, 0.2);
+}
+
+.secondary-button {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.secondary-button:hover {
+  background: #e8edf3;
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ================= TOOL OUTPUT ================= */
+
+.tool-output {
+  white-space: pre-wrap;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 16px;
+  line-height: 1.55;
+  max-height: 500px;
+  overflow: auto;
+  color: #334155;
+  font-size: 13px;
+}
+
+/* ================= ERROR / LOADING ================= */
+
+.tool-error {
+  margin: 12px 0;
+  padding: 12px;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fee2e2;
+  font-size: 13px;
+}
+
+.tool-loading {
+  padding: 12px;
+  color: #475569;
+  font-size: 13px;
+}
+
+/* ================= DIFFICULTY ================= */
+
+.difficulty-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+/* ================= QUIZ ================= */
+
+.quiz-tool-item {
+  padding: 16px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.quiz-tool-item:last-child {
+  border-bottom: none;
+}
+
+.quiz-tool-item label {
+  display: block;
+  padding: 7px 0;
+  color: #334155;
+  font-size: 13px;
+}
+
+.quiz-tool-item label input {
+  margin-right: 8px;
+  accent-color: #6658ee;
+}
+
+.quiz-tool-item small {
+  display: block;
+  margin-top: 8px;
+  color: #64748b;
+}
+
+/* ================= FILE UPLOAD ================= */
+
+.file-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 15px 0;
+}
+
+.file-list span {
+  padding: 8px 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  color: #475569;
+  font-size: 12px;
+}
+
+/* ================= ADVANCED TOOLS ================= */
+
+.advanced-tools-row {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.advanced-tools-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ================= STUDY TOOL HEADINGS ================= */
+
+.tool-panel h3,
+.learning-dashboard h3 {
+  color: #171923;
+}
+
+.tool-panel h4 {
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+.tool-panel p {
+  color: #64748b;
+  line-height: 1.55;
+}
+
+/* ================= SCROLLBAR ================= */
+
+.tool-output::-webkit-scrollbar,
+.mindmap-container::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.tool-output::-webkit-scrollbar-thumb,
+.mindmap-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.tool-output::-webkit-scrollbar-track,
+.mindmap-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+  .progress-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tool-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+
+  .sidebar {
+    width: 190px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    padding: 0 25px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .sidebar {
+    display: none;
+  }
+
+  .header {
+    padding: 0 18px;
+  }
+
+  .hero {
+    margin-top: 35px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .workspace-card {
+    margin: 0 15px;
+    padding: 20px;
+  }
+
+  .input-options {
+    flex-wrap: wrap;
+  }
+
+  .supported {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .study-tools-section {
+    padding: 0 14px;
+  }
+
+  .study-tools-heading h2 {
+    font-size: 25px;
+  }
+
+  .progress-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .progress-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tool-columns {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .tool-form {
+    flex-direction: column;
+  }
+
+  .tool-form input {
+    width: 100%;
+  }
+
+  .difficulty-row {
+    width: 100%;
+  }
+
+  .tool-tab,
+  .difficulty {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+}
+/* ================= SAVED MAP ACTIONS ================= */
+
+.saved-map-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.saved-map-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.saved-map-item > .clear-button {
+  flex-shrink: 0;
+}
+
+.saved-map-open {
+  margin-right: 8px;
+}
