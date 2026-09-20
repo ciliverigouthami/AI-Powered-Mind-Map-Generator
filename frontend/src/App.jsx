@@ -186,7 +186,7 @@ function App() {
       formData.append("file", file);
 
       const response = await fetch(
-        `${API_URL}/api/upload-docx',
+        `${API_URL}/api/upload-docx`,
         {
           method: "POST",
           body: formData,
