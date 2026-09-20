@@ -25,7 +25,9 @@ import { toPng } from "html-to-image";
 import { jsPDF } from "jspdf";
 import StudyPack from "./StudyPack";
 import StudyTools from "./StudyTools";
-
+const API_URL =
+import.meta.env.VITE_API_URL ||
+  "http://127.0.0.1:8000";
 function App() {
   
   const [content, setContent] = useState("");
@@ -126,7 +128,7 @@ function App() {
       formData.append("file", file);
 
       const response = await fetch(
-        "http://127.0.0.1:8000/api/upload-pdf",
+        `${API_URL}/api/upload-pdf',
         {
           method: "POST",
           body: formData,
@@ -184,7 +186,7 @@ function App() {
       formData.append("file", file);
 
       const response = await fetch(
-        "http://127.0.0.1:8000/api/upload-docx",
+        `${API_URL}/api/upload-docx',
         {
           method: "POST",
           body: formData,
@@ -228,7 +230,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/api/generate-mindmap",
+        `${API_URL}/api/generate-mindmap`,
         {
           method: "POST",
           headers: {
@@ -796,7 +798,7 @@ const deleteSelectedNode = () => {
       setError("");
 
       const response = await fetch(
-        "http://127.0.0.1:8000/api/explain-node",
+        '${API_URL}/api/explain-node',
         {
           method: "POST",
           headers: {
@@ -848,7 +850,7 @@ const deleteSelectedNode = () => {
       setError("");
 
       const response = await fetch(
-        "http://127.0.0.1:8000/api/generate-quiz",
+        `${API_URL}/api/generate-quiz',
         {
           method: "POST",
           headers: {
@@ -918,7 +920,7 @@ const deleteSelectedNode = () => {
     setError("");
 
     const response = await fetch(
-      "http://127.0.0.1:8000/api/ask-ai",
+      `${API_URL}/api/ask-ai',
       {
         method: "POST",
         headers: {
@@ -1161,7 +1163,7 @@ const handleNodeClickForConnection = (event, node) => {
       );
 
       const response = await fetch(
-        "http://127.0.0.1:8000/api/save-mindmap",
+        `${API_URL}/api/save-mindmap',
         {
           method: "POST",
           headers: {
@@ -1213,7 +1215,7 @@ const handleNodeClickForConnection = (event, node) => {
       setHistoryLoading(true);
 
       const response = await fetch(
-        "http://127.0.0.1:8000/api/mindmaps"
+        `${API_URL}/api/mindmaps'
       );
 
       const data = await response.json();
