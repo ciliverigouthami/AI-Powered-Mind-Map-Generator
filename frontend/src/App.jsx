@@ -128,7 +128,7 @@ function App() {
       formData.append("file", file);
 
       const response = await fetch(
-        `${API_URL}/api/upload-pdf',
+        `${API_URL}/api/upload-pdf`,
         {
           method: "POST",
           body: formData,
@@ -798,7 +798,7 @@ const deleteSelectedNode = () => {
       setError("");
 
       const response = await fetch(
-        '${API_URL}/api/explain-node',
+        `${API_URL}/api/explain-node`,
         {
           method: "POST",
           headers: {
@@ -850,7 +850,7 @@ const deleteSelectedNode = () => {
       setError("");
 
       const response = await fetch(
-        `${API_URL}/api/generate-quiz',
+        `${API_URL}/api/generate-quiz`,
         {
           method: "POST",
           headers: {
@@ -920,7 +920,7 @@ const deleteSelectedNode = () => {
     setError("");
 
     const response = await fetch(
-      `${API_URL}/api/ask-ai',
+      `${API_URL}/api/ask-ai`,
       {
         method: "POST",
         headers: {
@@ -1163,7 +1163,7 @@ const handleNodeClickForConnection = (event, node) => {
       );
 
       const response = await fetch(
-        `${API_URL}/api/save-mindmap',
+        `${API_URL}/api/save-mindmap`,
         {
           method: "POST",
           headers: {
@@ -1215,7 +1215,7 @@ const handleNodeClickForConnection = (event, node) => {
       setHistoryLoading(true);
 
       const response = await fetch(
-        `${API_URL}/api/mindmaps'
+        `${API_URL}/api/mindmaps`
       );
 
       const data = await response.json();
