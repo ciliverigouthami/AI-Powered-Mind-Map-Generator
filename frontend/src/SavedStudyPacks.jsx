@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-
+const API_BASE =
+  import.meta.env.VITE_API_URL ||
+  "http://127.0.0.1:8000";
 function SavedStudyPacks({ onOpenStudyPack }) {
   const [studyPacks, setStudyPacks] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -10,7 +12,7 @@ function SavedStudyPacks({ onOpenStudyPack }) {
       setLoading(true);
       setError("");
 
-      const response = await fetch("http://127.0.0.1:8000/api/study-packs");
+      const response = await fetch(`${API_BASE}/api/study-packs');
       const data = await response.json();
 
       if (!response.ok || !data.success) {
