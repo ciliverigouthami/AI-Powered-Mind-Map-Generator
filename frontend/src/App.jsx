@@ -24,7 +24,7 @@ import "reactflow/dist/style.css";
 import { toPng } from "html-to-image";
 import { jsPDF } from "jspdf";
 import StudyPack from "./StudyPack";
-import StudyTools from "./StudyTools";
+import StudyTools from "./studyTools";
 const API_URL =
   import.meta.env.VITE_API_URL ||
   "http://127.0.0.1:8000";
